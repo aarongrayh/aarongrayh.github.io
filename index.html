@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            margin: 100px auto;
+            transform-origin: left bottom;
+        }
+        div:hover {
+            /* 1. 里面写的是数字 不跟代为 1为一倍
+                transform: scale(x,y)
+                x宽度   y高度
+                2. 修改了 宽度为原来的两倍 高度不变
+                3.等比例缩放
+            */
+            /* transform: scale(2,1); */
+            /* transform: scale(2); */
+            /* 4. 缩小 就是小于一 */
+
+            /* 重点 
+            修改大小会影响其他盒子
+                优势：不会影响其他的盒子 而且可以设置缩放的中心点
+            */
+            transform: scale(0.5,0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

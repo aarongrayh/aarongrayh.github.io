@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        .bear {
+            top: 600px;
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: url(../images/bear.png) no-repeat;
+            /* 可以添加多个动画 用，间隔 */
+            animation: bear 1s steps(8) infinite,move 3s forwards; 
+            z-index: 3;
+        }
+        .mon {
+            height: 700px;
+        }
+        .bg1 {
+            position: absolute;
+            left: 0;
+            top: 400px;
+            width: 100%;
+            height: 300px;
+            z-index: 2;   /* 优先级  越高层叠性越高 */
+            background: url(../images/bg1.png) repeat-x;  /* 水平平铺 */
+            animation: bg1 10s linear infinite;
+            animation-delay: 1s;   /* 动画延时 */
+            
+        }
+        .bg2 {
+            position: absolute;
+            left: 0;
+            top: 300px;
+            width: 100%;
+            height: 400px;
+            z-index: 1;
+            background: url(../images/bg2.png) repeat-x;
+            animation: bg2 20s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }         
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                /* margin-left: -100px; */
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes mon {
+            0% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bg1 {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -3840px 0;
+            }
+        }
+
+        @keyframes bg2 {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -3840px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bear">
+    </div>
+    <div class="mon">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+    </div>
+</body>
+</html>
